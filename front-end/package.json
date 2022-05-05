@@ -1,0 +1,19 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "Front-end loja virtual",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davisralves/loja_virtual.git"
+  },
+  "author": "Davi Alves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davisralves/loja_virtual/issues"
+  },
+  "homepage": "https://github.com/Davisralves/loja_virtual#readme"
+}
