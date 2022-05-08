@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Styles/index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from "./Pages";
+import {Login, Home} from "./Pages";
 import reportWebVitals from "./reportWebVitals";
-import {UseUserContext} from "./context/userContext";
+import Provider from "./context/userContext";
 export default function App() {
-  const {UserContext, value} = UseUserContext();
   return (
     <BrowserRouter>
-    <UserContext.Provider value={value}>
+    <Provider>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
-    </UserContext.Provider>
+    </Provider>
     </BrowserRouter>
   )
 }

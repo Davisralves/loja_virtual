@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./login.css";
 import { useContext } from "react";
-import { UseUserContext } from '../../context/userContext';
 import { verifyLogin } from "../../Service";
 import { useNavigate } from "react-router-dom";
+import AppContext from "../../context/context";
 
 function Login() {
-  const user = useContext(UseUserContext().UserContext);
+  const user = useContext(AppContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setError] = useState('');
@@ -26,9 +26,8 @@ function Login() {
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const response = await verifyLogin({username, password});
-    console.log(response);  
     if(response.status !== 200) {
-      return handleError(response);
+      return handleError('error');
     } 
     const { admin } = response.body;
     user.setUsername(username); 
