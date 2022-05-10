@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  front-end:
+    build: ./front-end
+    container_name: front_end
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/
+    networks:
+      - back-end
+    ports: 
+      - 3000:3000
+    depends_on:
+      - "back-end"
+
+  back-end:
+    build: ./back-end
+    container_name: back_end_and_data_base
+    environment:
+      - PORT=8000
+      - HOST=us-cdbr-east-05.cleardb.net
+      - USERNAME=b0039d2b4b788d
+      - PASSWORD=1e8d4924
+      - DATA_BASE=heroku_b0de8c2c702d7a2
+    networks:
+      - back-end
+    ports: 
+      - 8000:8000
+
+
+networks:
+  back-end:

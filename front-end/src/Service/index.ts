@@ -1,4 +1,4 @@
-import { IUserLogin } from "../interfaces";
+import { IUserLogin } from "../Interfaces";
 export const verifyLogin = async ({username, password}: IUserLogin) => {
   // try {
     return {body: {admin: true}, status: 200}
@@ -14,5 +14,19 @@ export const verifyLogin = async ({username, password}: IUserLogin) => {
   //   return error;
   // }
 }
-// https://api.mercadolibre.com/sites/MLB/search?category=MLB1051
+// REACT_APP_API_URL=http://localhost:8000/
+
+export const fetchProducts = async () => {
+    try {
+        const requestOptions = {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        }
+        const response = await fetch(`${process.env.REACT_APP_API_URL}`, requestOptions);
+        if(!response) throw Error('Server Error');
+        return await response.json();
+      } catch(error) {
+        return error;
+      }
+}
 

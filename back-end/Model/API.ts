@@ -1,5 +1,6 @@
 import { Product } from "../Interfaces/Products";
-import fetch from 'node-fetch';
+const fetch = require("node-fetch");
+
 
 export const fetchProducts = async () => {
   const response = await fetch('https://api.mercadolibre.com/sites/MLB/search?category=MLB1051');
