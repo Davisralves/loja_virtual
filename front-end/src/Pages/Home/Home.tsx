@@ -12,7 +12,7 @@ const [products, setProducts] = useState([] as Product[]);
 useEffect(() => {
   const getProducts = async () => {
     try{
-      setProducts(await  fetchProducts());
+      setProducts(await fetchProducts());
     } catch(error) {
       console.log(error);
     }
@@ -21,14 +21,21 @@ useEffect(() => {
 }, [])
 
 const renderProducts = () => {
-  if(products.length > 0) return <span />;
-  return products.map(({thumbnail}) => <img alt="smartphone" src={thumbnail}></img>)
+  if(products.length === 0) return <span />;
+  return products.map(({title, thumbnail, price}, index) => (
+    <div key={index}>
+      <h5>{title}</h5>
+      <img alt="smartphone" src={thumbnail}></img>
+      <legend>{price}</legend>
+    </div>
+  )
+)
 }
 return (
   <main>
     <Header />
-    {renderProducts()}
     <h1>Home</h1>
+    {renderProducts()}
   </main>
 );
 }

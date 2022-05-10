@@ -18,12 +18,9 @@ export const verifyLogin = async ({username, password}: IUserLogin) => {
 
 export const fetchProducts = async () => {
     try {
-        const requestOptions = {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' },
-        }
-        const response = await fetch(`${process.env.REACT_APP_API_URL}`, requestOptions);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}products`);
         if(!response) throw Error('Server Error');
+        console.log('fetch', response);
         return await response.json();
       } catch(error) {
         return error;
