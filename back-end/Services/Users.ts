@@ -6,6 +6,11 @@ const UsersService = {
 
   verifyEmail: async (email: string): Promise<boolean> => {
     return !!UserModel.getEmail(email);
+  },
+
+  logIn: async (email: string, password: string) => {
+    return await UserModel.logIn(email, password);
+    
   }
 }
 

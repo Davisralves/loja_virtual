@@ -18,6 +18,12 @@ const UserModel = {
     const query = `SELECT email FROM users WHERE email = ?`;
     const [result] = await connection.execute(query, [email]) as RowDataPacket[]
     return result;
+  },
+
+  logIn: async (email: string, password: string) => {
+    const query = `SELECT name, email, admin  FROM users WHERE email = ? AND password = ?`;
+    const [result] = await connection.execute(query, [email, password]) as RowDataPacket[]
+    return result;
   }
 }
 
