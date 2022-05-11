@@ -1,6 +1,5 @@
 import * as sinon from "sinon";
 import UserModel from "../Model/Users";
-import UserService from "../Services/Users";
 import app from "../index";
 import chai from "chai";
 import chaiHttp from "chai-http";
