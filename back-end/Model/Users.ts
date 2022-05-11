@@ -12,6 +12,12 @@ const UserModel = {
 			admin,
 		]);
     return result.insertId;
+  },
+
+  getEmail: async (email: string) => {
+    const query = `SELECT email FROM users WHERE email = ?`;
+    const [result] = await connection.execute(query, [email]) as RowDataPacket[]
+    return result;
   }
 }
 
