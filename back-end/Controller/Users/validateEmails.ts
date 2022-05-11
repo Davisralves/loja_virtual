@@ -11,7 +11,7 @@ const validateEmail = async (
 ) => {
 	try {
 		const { email } = req.body;
-		const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+		const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i;
 		if (isNotString(email))
 			throw generateError("Name must be a string", StatusCode.BAD_REQUEST);
 		if (!emailRegex.test(email) || !(await UsersService.verifyEmail(email)))

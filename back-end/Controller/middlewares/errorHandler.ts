@@ -13,7 +13,7 @@ export const errorHandler = async (
 ) => {
   error.code = error.code || 500;
   error.message = error.message || 'Internal server error';
-  res.status(error.code).json(error);
+  res.status(error.code).json({Error: error.message });
 }
 
 export const generateError = (message: string, code: number) => {
