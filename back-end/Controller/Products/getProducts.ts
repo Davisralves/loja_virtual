@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import ProductsService from "../Services/Products";
-import StatusCode from "../enums/statusCode";
+import ProductsService from "../../Services/Products";
+import StatusCode from "../../enums/statusCode";
 
 export const getProducts = async (
 	_req: Request,

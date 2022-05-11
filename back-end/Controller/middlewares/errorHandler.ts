@@ -1,17 +1,23 @@
 import { Request, Response, NextFunction, ErrorRequestHandler } from "express";
 
 interface error extends ErrorRequestHandler {
-  status: number;
+  code?: number;
   message: any;
 }
 
-const errorHandler = async (
+export const errorHandler = async (
   error: error,
 	_req: Request,
 	res: Response,
 	_next: NextFunction
 ) => {
-  res.status(error.status).json({error: `Erro: ${error.message}`})
+  error.code = error.code || 500;
+  error.message = error.message || 'Internal server error';
+  res.status(error.code).json({Error: error.message });
 }
 
-export default errorHandler;
+export const generateError = (message: string, code: number) => {
+  const error = new Error(message) as error;
+  error.code = code;
+  return error;
+};
