@@ -38,4 +38,38 @@ describe('Test if route /register work as aspected', () => {
     expect(chaiHttpResponse.body.email).to.be.equals(registerResponse.email);
     expect(chaiHttpResponse.body.admin).to.be.equals(registerResponse.admin);
   });
-})
+
+  
+  it('Throw correct erro if e-mail is invalid', async () => {
+    const validUser = {
+      name: 'validName',
+      email: 'invalidEmail.com',
+      password: 'validPassword',
+      admin: false,
+    };
+    const chaiHttpResponse = await chai.request(app).post('/register').send(validUser);
+    expect(chaiHttpResponse.body.Error).to.be.equals('Invalid Email');
+  });
+
+  it('Throw correct erro if name is invalid', async () => {
+    const validUser = {
+      name: 123,
+      email: 'validEmail@Email.com',
+      password: 'validPassword',
+      admin: false,
+    };
+    const chaiHttpResponse = await chai.request(app).post('/register').send(validUser);
+    expect(chaiHttpResponse.body.Error).to.be.equals('Name must be a string');
+  });
+
+  it('Throw correct erro if password is invalid', async () => {
+    const validUser = {
+      name: 'validName',
+      email: 'validEmail@Email.com',
+      password: 'invalid',
+      admin: false,
+    };
+    const chaiHttpResponse = await chai.request(app).post('/register').send(validUser);
+    expect(chaiHttpResponse.body.Error).to.be.equals('Password must have at least 8 characters');
+});
+});
