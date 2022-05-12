@@ -7,7 +7,7 @@ import AppContext from "../../context/context";
 
 function Login() {
   const user = useContext(AppContext);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setError] = useState('');
   const navigate = useNavigate();
@@ -19,18 +19,18 @@ function Login() {
 
   const handleError = (error: string) => {
     setError(error);
-    setUsername('');
+    setEmail('');
     setPassword('');
   }
 
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    const response = await verifyLogin({username, password});
+    const response = await verifyLogin({email, password});
     if(response.status !== 200) {
       return handleError('error');
     } 
     const { admin } = response.body;
-    user.setUsername(username); 
+    user.setEmail(email); 
     user.setAdmin(admin);
     navigate('/home');
   };
@@ -43,7 +43,7 @@ function Login() {
 					<input
 						type="email"
 						className="form-control"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
 						id="username"
 						placeholder="E-mail"
 					/>

@@ -1,16 +1,18 @@
 export interface IUserLogin {
-  username: string,
+  email: string,
   password: string
 }
 
 export interface IUser {
-  username: string,
+  email: string,
+  coins: number,
   admin: boolean,
 }
 
 export interface IUserContext extends IUser{
-  setUsername: Function,
+  setEmail: Function,
   setAdmin: Function,
+  setCoins: Function,
 }
 
 export interface Product {

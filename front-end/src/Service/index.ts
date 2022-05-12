@@ -1,5 +1,5 @@
 import { IUserLogin } from "../Interfaces";
-export const verifyLogin = async ({username, password}: IUserLogin) => {
+export const verifyLogin = async ({email, password}: IUserLogin) => {
   // try {
     return {body: {admin: true}, status: 200}
   //   const requestOptions = {
