@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "./singUp.css";
-import { useContext } from "react";
-import { registerUser, verifyLogin } from "../../Service";
+import { registerUser } from "../../Service";
 import { useNavigate } from "react-router-dom";
-import AppContext from "../../context/context";
 
 function SingUp() {
-  const user = useContext(AppContext);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
