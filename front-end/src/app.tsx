@@ -4,12 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Login, Home} from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import Provider from "./context/userContext";
+import SingUp from "./Pages/singUp/SingUp";
+
 export default function App() {
   return (
     <BrowserRouter>
     <Provider>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/singUp" element={<SingUp />} />
         <Route path="/home" element={<Home />} />
       </Routes>
     </Provider>

@@ -45,7 +45,7 @@ function Login() {
 						className="form-control"
             onChange={(e) => setUsername(e.target.value)}
 						id="username"
-						placeholder="Username"
+						placeholder="E-mail"
 					/>
 					<label htmlFor="username"></label>
 					<input
@@ -58,6 +58,8 @@ function Login() {
 					<label htmlFor="password"></label>
           {errorRender()}
 					<button onClick={(e) => handleClick(e)} className="btn btn-primary">Login</button>
+          <br />
+					<button onClick={() => navigate('/singUp')} className="btn btn-outline-success">Sing Up</button>
 				</form>
 			</div>
 		</main>
