@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./singUp.css";
 import { useContext } from "react";
-import { verifyLogin } from "../../Service";
+import { registerUser, verifyLogin } from "../../Service";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../../context/context";
 
@@ -18,29 +18,26 @@ function SingUp() {
     else return null; 
   }
 
-  const handleError = (error: string) => {
-    setError(error);
-    setEmail('');
-    setPassword('');
-  }
-
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    const response = await verifyLogin({email, password});
-    if(response.status !== 200) {
-      return handleError('error');
-    } 
-    const { admin } = response.body;
-    user.setEmail(email); 
-    user.setAdmin(admin);
-    navigate('/home');
+    const response = await registerUser(name, email, password);
+    if(response.Error) return setError(response.Error);
+    return navigate('/');
   };
 
 	return (
 		<main className="main">
 			<div className="card">
-				<h3 data-testid="title">Login</h3>
+				<h3 data-testid="title">Register</h3>
 				<form className="login">
+        <input
+						type="text"
+						className="form-control"
+            onChange={(e) => setName(e.target.value)}
+						id="name"
+						placeholder="Name"
+					/>
+					<label htmlFor="name"></label>
 					<input
 						type="email"
 						className="form-control"
@@ -58,9 +55,7 @@ function SingUp() {
 					/>
 					<label htmlFor="password"></label>
           {errorRender()}
-					<button onClick={(e) => handleClick(e)} className="btn btn-primary">Login</button>
-          <br />
-					<button onClick={() => navigate('/singUp')} className="btn btn-outline-success">Sing Up</button>
+					<button onClick={(e) => handleClick(e)} className="btn btn-primary">Register</button>
 				</form>
 			</div>
 		</main>
