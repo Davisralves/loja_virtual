@@ -4,7 +4,7 @@ services:
     build: ./front-end
     container_name: front_end
     environment:
-      - REACT_APP_API_URL=http://localhost:8000/
+      - REACT_APP_API_URL=http://localhost:8000
     networks:
       - back-end
     ports: 

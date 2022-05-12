@@ -24,6 +24,6 @@ body {
 .login {
 	display: flex;
 	flex-direction: column;
-	color: aliceblue;
+	color: red;
 	width: 50%;
 }
