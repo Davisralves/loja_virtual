@@ -4,12 +4,14 @@ export interface IUserLogin {
 }
 
 export interface IUser {
+  name: string,
   email: string,
   coins: number,
   admin: boolean,
 }
 
 export interface IUserContext extends IUser{
+  setName: Function,
   setEmail: Function,
   setAdmin: Function,
   setCoins: Function,

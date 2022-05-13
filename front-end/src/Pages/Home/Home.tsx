@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useContext, useEffect } from "react";
 import AppContext from "../../context/context";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import { fetchProducts } from "../../Service";
 import {Product} from '../../Interfaces';
 function Home() {
