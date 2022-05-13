@@ -10,7 +10,8 @@
     "start": "npm run build && node ./dist/index.js",
     "dev": "tsnd index.ts",
     "build": "tsc",
-    "test": "npm run build && mocha -r ts-node/register ./tests/**.{test,spec}.ts -t 10000 --exit"
+    "test": "npm run build && mocha -r ts-node/register ./tests/**.{test,spec}.ts -t 10000 --exit",
+    "test:coverage": "nyc --all npm run test"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "express": "^4.17.3",
     "md5": "^2.3.0",
     "mysql2": "^2.3.3",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "nyc": "^15.1.0"
   }
 }

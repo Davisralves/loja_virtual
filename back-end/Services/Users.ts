@@ -4,7 +4,7 @@ const UsersService = {
     return await UserModel.register(name, email, password, admin, coins)
   },
 
-  verifyEmail: async (email: string): Promise<boolean> => {
+  verifyEmail: async (email: string): Promise<number> => {
     const userEmail = await UserModel.getEmail(email);
     return userEmail.length;
   },
