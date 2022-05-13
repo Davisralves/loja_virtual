@@ -11,11 +11,11 @@ const { expect } = chai;
 describe("Test if route /login work as aspected", () => {
 	let chaiHttpResponse: Response;
 	describe("Test route in case of sucess", () => {
-		const loginResponse = {
+		const loginResponse = [{
 			name: "validName",
 			email: "validEmail@Email.com",
 			admin: false,
-		};
+		}];
 		before(async () => {
 			sinon.stub(UserModel, "logIn").resolves(loginResponse as any);
 		});
@@ -34,9 +34,9 @@ describe("Test if route /login work as aspected", () => {
 				.request(app)
 				.post("/login")
 				.send(validUser);
-			expect(chaiHttpResponse.body.name).to.be.equals(loginResponse.name);
-			expect(chaiHttpResponse.body.email).to.be.equals(loginResponse.email);
-			expect(chaiHttpResponse.body.admin).to.be.equals(loginResponse.admin);
+			expect(chaiHttpResponse.body.name).to.be.equals(loginResponse[0].name);
+			expect(chaiHttpResponse.body.email).to.be.equals(loginResponse[0].email);
+			expect(chaiHttpResponse.body.admin).to.be.equals(loginResponse[0].admin);
 		});
 	});
 	describe("Test route in case of error", () => {

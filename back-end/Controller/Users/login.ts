@@ -13,7 +13,7 @@ const logIn = async (
     const hash = md5(password);
     const user = await UsersService.logIn(email, hash);
     if(user.length === 0) throw generateError('Invalid Email or password', StatusCode.NOT_FOUND);
-    res.status(200).json(user);
+    res.status(200).json(user[0]);
 		next();
 	} catch (error) {
 		next(error);
