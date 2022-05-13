@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Login, Home} from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import Provider from "./context/userContext";
-import SingUp from "./Pages/singUp/SingUp";
+import SingUp from "./Pages/SingUp/SingUp";
 
 export default function App() {
   return (

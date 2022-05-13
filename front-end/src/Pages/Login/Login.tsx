@@ -29,10 +29,11 @@ function Login() {
 		e.preventDefault();
 		const response = await verifyLogin({ email, password });
 		if (response.Error) return handleError(response.Error);
-		const { admin, coins } = response;
+		const { admin, coins, name } = response;
 		user.setEmail(email);
 		user.setAdmin(admin);
 		user.setCoins(coins);
+    user.setName(name);
 		navigate("/home");
 	};
 

@@ -43,9 +43,8 @@ export const registerUser = async (
 
 export const fetchProducts = async () => {
 	try {
-		const response = await fetch(`${process.env.REACT_APP_API_URL}products`);
+		const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
 		if (!response) throw Error("Server Error");
-		console.log("fetch", response);
 		return await response.json();
 	} catch (error) {
 		return error;
