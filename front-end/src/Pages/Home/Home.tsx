@@ -9,7 +9,6 @@ import "./home.css";
 
 function Home() {
 	const user = useContext(AppContext);
-	console.log("home user", user);
 	const [products, setProducts] = useState([] as Product[] | []);
 
 	useEffect(() => {
@@ -26,7 +25,7 @@ function Home() {
 	return (
 		<main>
 			<Header />
-			<div className="productsMain">{<Products products={products} />}</div>
+			<div data-testid="productsMain" className="productsMain">{<Products products={products} />}</div>
 		</main>
 	);
 }
