@@ -9,8 +9,7 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe("Test if route /products/reset work as aspected", () => {
-	let chaiHttpResponse: Response;
+describe("Test if route put /products/reset work as aspected", () => {
 	describe("Test route in case of sucess", () => {
 		const products = [{
 			title: "title",
@@ -37,7 +36,7 @@ describe("Test if route /products/reset work as aspected", () => {
 		it("response status 200 and return the number of affected rows", async () => {
 			const chaiHttpResponse = await chai
 				.request(app)
-				.post("/products/reset")
+				.put("/products/reset")
 				.send(products);
 			expect(chaiHttpResponse.body.totalProducts).to.be.equals(2);
 			expect(chaiHttpResponse.status).to.be.equals(200);

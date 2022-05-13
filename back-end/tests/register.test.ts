@@ -18,7 +18,7 @@ describe('Test if route /register work as aspected', () => {
   };
   before(async () => {
     sinon.stub(UserModel, 'register').resolves(registerResponse as any);
-    sinon.stub(UserService, 'verifyEmail').resolves(true);
+    sinon.stub(UserService, 'verifyEmail').resolves(1);
   })
 
   after(() => {

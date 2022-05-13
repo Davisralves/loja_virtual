@@ -8,7 +8,7 @@ const resetProducts = async (
 	next: NextFunction
 ) => {
 	try {
-		const products = await ProductsService.getProducts();
+		const products = await ProductsService.getProductsFromApi();
     const totalProducts: number = await ProductsService.resetProducts(products);
 		return res.status(200).json({totalProducts});
 	} catch (err) {

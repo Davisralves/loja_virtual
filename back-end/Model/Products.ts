@@ -19,6 +19,12 @@ const ProductModel = {
 		]);
 		return result.affectedRows;
 	},
+
+  getAllProducts: async () => {
+    const query = `SELECT * from products`;
+    const [result] = await connection.execute<RowDataPacket[]>(query);
+    return result as Product[];
+  }
 };
 
 export default ProductModel;

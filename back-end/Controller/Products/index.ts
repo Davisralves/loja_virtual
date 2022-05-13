@@ -1,4 +1,4 @@
 import resetProducts from "./resetProducts";
-import getProducts from "./getProducts";
+import getAllProducts from "./getAllProducts";
 
-export {resetProducts, getProducts};
+export {resetProducts, getAllProducts};

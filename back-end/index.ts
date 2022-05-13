@@ -1,7 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import { errorHandler } from "./Controller/middlewares/errorHandler";
-import { getProducts, resetProducts } from "./Controller/Products";
+import { getAllProducts, resetProducts } from "./Controller/Products";
 import {
 	validateEmail,
 	validateName,
@@ -23,9 +23,9 @@ app.post("/register", validateName, validatePassword, validateEmail, register);
 
 app.post("/login", logIn);
 
-app.get("/products", getProducts);
+app.get("/products", getAllProducts);
 
-app.post("/products/reset", resetProducts);
+app.put("/products/reset", resetProducts);
 
 app.use(errorHandler);
 
