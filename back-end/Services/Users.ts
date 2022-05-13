@@ -5,7 +5,8 @@ const UsersService = {
   },
 
   verifyEmail: async (email: string): Promise<boolean> => {
-    return !!UserModel.getEmail(email);
+    const userEmail = await UserModel.getEmail(email);
+    return userEmail.length;
   },
 
   logIn: async (email: string, password: string) => {
