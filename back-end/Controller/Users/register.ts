@@ -10,9 +10,9 @@ const register = async (
 	next: NextFunction
 ) => {
 	try {
-    const { name, email, password, admin } = req.body;
+    const { name, email, password, admin, coins } = req.body;
     const hash = md5(password);
-    UsersService.registerNewUser(name, email, hash, admin);
+    UsersService.registerNewUser(name, email, hash, admin, coins);
     res.status(StatusCode.CREATED).json({name, email, admin})
 	} catch (error) {
 		next(error);

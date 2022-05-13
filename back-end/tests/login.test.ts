@@ -41,7 +41,7 @@ describe("Test if route /login work as aspected", () => {
 	});
 	describe("Test route in case of error", () => {
 		before(async () => {
-			sinon.stub(UserModel, "logIn").resolves(false as any);
+			sinon.stub(UserModel, "logIn").resolves([] as any);
 		});
 
 		after(() => {

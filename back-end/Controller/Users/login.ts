@@ -12,7 +12,7 @@ const logIn = async (
 		const { email, password } = req.body;
     const hash = md5(password);
     const user = await UsersService.logIn(email, hash);
-    if(!user) throw generateError('Invalid Email or password', StatusCode.NOT_FOUND);
+    if(user.length === 0) throw generateError('Invalid Email or password', StatusCode.NOT_FOUND);
     res.status(200).json(user);
 		next();
 	} catch (error) {

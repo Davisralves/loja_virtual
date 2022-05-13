@@ -34,6 +34,7 @@ describe('Test if route /register work as aspected', () => {
       admin: false,
     };
     const chaiHttpResponse = await chai.request(app).post('/register').send(validUser);
+    console.log(chaiHttpResponse.body);
     expect(chaiHttpResponse.body.name).to.be.equals(registerResponse.name);
     expect(chaiHttpResponse.body.email).to.be.equals(registerResponse.email);
     expect(chaiHttpResponse.body.admin).to.be.equals(registerResponse.admin);

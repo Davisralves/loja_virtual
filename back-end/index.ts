@@ -21,7 +21,7 @@ app.use(bodyParse.json());
 
 app.post("/register", validateName, validatePassword, validateEmail, register);
 
-app.post("/login", validatePassword, logIn);
+app.post("/login", logIn);
 
 app.get("/products", getProducts);
 
