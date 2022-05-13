@@ -9,7 +9,7 @@ type Props = {
 function Products({ products }: Props) {
 	const renderProducts = () => {
 		if (products.length === 0)  {
-      return <ReactLoading className="loading" type="spin" color="lightskyblue" height={100} width={100} />;
+      return <ReactLoading data-testid="loadingComponent" className="loading" type="spin" color="lightskyblue" height={100} width={100} />;
     }
 		return products.map(({ title, thumbnail, price }, index) => (
 			<div key={index} className="productCard">
