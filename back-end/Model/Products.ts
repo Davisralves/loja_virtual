@@ -24,6 +24,12 @@ const ProductModel = {
     const query = `SELECT * from products`;
     const [result] = await connection.execute<RowDataPacket[]>(query);
     return result as Product[];
+  },
+
+  postProduct: async (title: string, thumbnail: string, price: number) => {
+    const query = `INSERT INTO products (title, thumbnail, price) VALUES (?, ?, ?)`;
+    const [product] = await connection.execute<ResultSetHeader>(query, [title, thumbnail, price])
+    return product.insertId;
   }
 };
 
