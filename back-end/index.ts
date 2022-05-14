@@ -8,6 +8,7 @@ import {
 	validatePassword,
 	register,
 	logIn,
+  giveCoins,
 } from "./Controller/Users";
 const cors = require("cors");
 const app = express();
@@ -22,6 +23,8 @@ app.use(bodyParse.json());
 app.post("/register", validateName, validatePassword, validateEmail, register);
 
 app.post("/login", logIn);
+
+app.post("/coins", giveCoins)
 
 app.get("/products", getAllProducts);
 

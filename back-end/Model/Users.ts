@@ -35,6 +35,12 @@ const UserModel = {
 		]);
 		return result;
 	},
+
+  giveCoins: async (name: string, coins: number) => {
+    const query = `UPDATE users SET coins = coins + ? WHERE name = ?`;
+    const [result] = await connection.execute<ResultSetHeader>(query, [coins, name]);
+    return result.affectedRows;
+  }
 };
 
 export default UserModel;
