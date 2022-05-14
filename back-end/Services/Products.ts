@@ -13,6 +13,11 @@ const ProductsService = {
 
   getAllProducts: async () => {
     return await ProductModel.getAllProducts();
+  },
+
+  postProduct: async (title: string, thumbnail: string, price: number) => {
+   const insetId = await ProductModel.postProduct(title, thumbnail, price)
+    return {id: insetId, title, thumbnail, price};
   }
 }
 
