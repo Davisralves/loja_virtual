@@ -11,6 +11,7 @@ const user: IUserContext = useContext(AppContext);
       <div data-testid="userName"><b>Olá {user.name}</b></div>
       <div data-testid="cart">
       <Link to="/cart">Carrinho</Link>
+      {user.admin ? <Link to="/admin">Admin</Link> : null}
       </div>
       <div data-testid="coins">
         Moedas: {user.coins}

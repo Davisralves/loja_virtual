@@ -15,7 +15,7 @@ function Products({ products }: Props) {
 			<div key={index} className="productCard">
 				<h5>{title}</h5>
 				<img alt="smartphone" src={thumbnail} className="productImg"></img>
-				<div className="price">{`R$ ${price},00`}</div>
+				<div className="price">{`R$ ${price.toFixed(2).replace('.', ',')}`}</div>
 			</div>
 		));
 	};

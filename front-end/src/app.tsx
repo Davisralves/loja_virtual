@@ -5,7 +5,7 @@ import {Login, Home} from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import Provider from "./context/userContext";
 import SingUp from "./Pages/SingUp/SingUp";
-
+import Admin from "./Pages/admin/Admin";
 export default function App() {
   return (
     <BrowserRouter>
@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="/singUp" element={<SingUp />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Provider>
     </BrowserRouter>
