@@ -73,7 +73,7 @@ export const createProduct = async (
 	}
 };
 
-export const giveCoins = async (name: string, coins: number) => {
+export const modifyCoins = async (name: string, coins: number) => {
 	try {
 		const requestOptions = {
 			method: "POST",

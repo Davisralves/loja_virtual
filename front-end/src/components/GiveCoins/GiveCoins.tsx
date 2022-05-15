@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { giveCoins } from "../../Service";
+import { modifyCoins } from "../../Service";
 
 function GiveCoins() {
 	const [message, setMessage] = useState("");
@@ -10,7 +10,7 @@ function GiveCoins() {
 	) => {
 		event.preventDefault();
 		if (name !== "" && coins !== 0) {
-			const response = await giveCoins(name, coins);
+			const response = await modifyCoins(name, coins);
 			if (response.Error) return setMessage(response.Error);
 			return setMessage("Moedas adicionadas com sucesso");
 		}
