@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { modifyCoins } from "../../Service";
 import Header from '../../components/Header/Header';
 import './productDetails.css';
+
 type ProductInState = {
 	state: {
 		title: string,
