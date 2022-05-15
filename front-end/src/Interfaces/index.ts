@@ -17,7 +17,7 @@ export interface IUserContext extends IUser{
   setCoins: Function,
 }
 
-export interface Product {
+export interface IProduct {
   title: string,
   price: number,
   thumbnail: string,

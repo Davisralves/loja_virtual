@@ -90,3 +90,4 @@ export const giveCoins = async (name: string, coins: number) => {
 		return error;
 	}
 };
+
