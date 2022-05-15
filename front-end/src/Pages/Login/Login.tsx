@@ -19,8 +19,6 @@ function Login() {
 
 	const handleError = (error: string) => {
 		setError(error);
-		setEmail("");
-		setPassword("");
 	};
 
 	const handleClick = async (

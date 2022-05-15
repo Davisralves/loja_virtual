@@ -12,4 +12,9 @@ describe("test if component header work as aspected", () => {
 		expect(cart).toBeInTheDocument();
 		expect(coins).toBeInTheDocument();
 	});
+  test("header links are render correct", () => {
+		renderWithRouter(<Header />);
+		const links = screen.getAllByRole('link')
+		expect(links).toHaveLength(1);
+	});
 });

@@ -1,22 +1,20 @@
-import { Product } from "../../Interfaces";
+import { IProduct } from "../../Interfaces";
 import "./product.css";
 import ReactLoading from "react-loading";
+import Product from '../Product/Product';
 
 type Props = {
-	products: Product[];
+	products: IProduct[];
 };
 
 function Products({ products }: Props) {
+
 	const renderProducts = () => {
 		if (products.length === 0)  {
       return <ReactLoading data-testid="loadingComponent" className="loading" type="spin" color="lightskyblue" height={100} width={100} />;
     }
 		return products.map(({ title, thumbnail, price }, index) => (
-			<div key={index} className="productCard">
-				<h5>{title}</h5>
-				<img alt="smartphone" src={thumbnail} className="productImg"></img>
-				<div className="price">{`R$ ${price},00`}</div>
-			</div>
+      <Product key={index} title={title} thumbnail={thumbnail} price={price}/>
 		));
 	};
 

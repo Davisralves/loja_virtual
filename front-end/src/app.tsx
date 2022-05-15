@@ -1,11 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Styles/index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Login, Home} from "./Pages";
+import {Login, Home, SingUp, Admin, ProductDetails} from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import Provider from "./context/userContext";
-import SingUp from "./Pages/SingUp/SingUp";
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -14,6 +12,8 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="/singUp" element={<SingUp />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/productDetails" element={<ProductDetails />} />
       </Routes>
     </Provider>
     </BrowserRouter>

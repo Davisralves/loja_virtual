@@ -3,13 +3,13 @@ import { useContext, useEffect } from "react";
 import AppContext from "../../context/context";
 import Header from "../../components/Header/Header";
 import { fetchProducts } from "../../Service";
-import { Product } from "../../Interfaces";
+import { IProduct } from "../../Interfaces";
 import Products from "../../components/Products/Products";
 import "./home.css";
 
 function Home() {
 	const user = useContext(AppContext);
-	const [products, setProducts] = useState([] as Product[] | []);
+	const [products, setProducts] = useState([] as IProduct[] | []);
 
 	useEffect(() => {
 		const getProducts = async () => {

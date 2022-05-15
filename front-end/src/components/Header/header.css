@@ -7,3 +7,7 @@ header {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+header a {
+  margin-right: 2em;
+}
