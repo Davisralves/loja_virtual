@@ -5,7 +5,7 @@
 Projeto de criação de um site de venda de celulares onde é possivel adquirir moedas e comprar seus produtos, fazer cadastro e login.
 
 ## Link
- [Clique Aqui](https://davisralves.github.io/trivia-trybe/)
+ [Clique Aqui](https://loja-virtual-front-end.herokuapp.com/)
 
 ## Tecnologias Utilizadas
  * React
