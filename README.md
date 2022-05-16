@@ -7,6 +7,11 @@ Projeto de criação de um site de venda de celulares onde é possivel adquirir 
 ## Link
  [Clique Aqui](https://loja-virtual-front-end.herokuapp.com/)
 
+## Para utilizar um conta administradora no App:
+ * Email: davialves324@hotmail.com
+ * senha: 12345678
+ 
+
 ## Tecnologias Utilizadas
  * React
  * context-Api
@@ -21,6 +26,13 @@ Projeto de criação de um site de venda de celulares onde é possivel adquirir 
  * npm cors
 
 ### Intruções para instalar e executar o projeto.
+
+#### Com Docker 🐟:
+1. Clone o repositório:
+  * ``` git@github.com:Davisralves/loja_virtual.git ```
+  * Execute o commando: docker-compose up
+    
+#### sem docker:
 1. Clone o repositório:
   * ``` git@github.com:Davisralves/loja_virtual.git ```
   * Entre na pasta do repositório que você acabou de clonar:
@@ -32,7 +44,7 @@ Projeto de criação de um site de venda de celulares onde é possivel adquirir 
 
 3. Instale as dependencias back-end
   * ``` npm install ```
-  * ``` npm start  (Uma nova pagina deve abrir no seu navegador com a aplicação funcionando) ```
+  * ``` npm start  (Seu back-end deve estar rodando na porta 8000) ```
 ## Status do projeto
  Finalizado
 
